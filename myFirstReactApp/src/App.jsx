@@ -1,5 +1,11 @@
-import {PI} from "./data";
+import {puppyList} from "./data.js"
+import { useState } from 'react'
 const App = () =>{
-  return <h1>hello{PI}</h1>
-  }
-  export default App;
+  const [puppies, setPuppies] = useState(puppyList);
+  console.log(puppies);
+return <div>{puppies.map((puppy)=>{
+  return <p key ={puppy.id}>{puppy.name}</p>
+})}</div>
+}
+
+export default App;
